@@ -21,6 +21,15 @@ The generated result includes REPORT.md, RESULT.json, RECEIPT.json, and the seal
 
 A non-author reviewer can follow NON_AUTHOR_REVIEW.md to run the package twice from fresh output directories and bind the results to the exact receipts and oracle hashes. The review scope is the published synthetic workflow only.
 
+The public verification workflow covers Ubuntu, Windows and macOS with Python
+3.11, 3.12 and 3.13. Its artifacts contain machine-readable replay receipts
+and oracle decisions. A passing workflow establishes hosted replay of this
+fixture; it does not establish product efficacy or human acceptance.
+
+See [REPRODUCIBILITY.md](REPRODUCIBILITY.md), [SECURITY.md](SECURITY.md) and
+[CITATION.cff](CITATION.cff) for the release boundary, reporting route and
+citation metadata.
+
 ## Boundaries
 
 This package does not establish automatic claim extraction, scientific truth, general retrieval quality, customer value, production readiness, or clean-machine recovery. The private product runtime remains separate. Any later qualification must name its package commit, commands, hashes, environment boundary, and limitations.

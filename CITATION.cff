@@ -1,0 +1,12 @@
+cff-version: 1.2.0
+message: "If you use this synthetic fixture, please cite the pinned release or commit."
+title: "ce-stranger-replay-v1"
+abstract: "A public synthetic replay of a bounded Consumption Engine evidence workflow."
+authors:
+  - family-names: Simone
+    given-names: Jonathan
+    email: jon@simoneresearch.com
+version: "1.0.0-fixture"
+date-released: 2026-09-24
+repository-code: "https://github.com/thisisntjon/ce-stranger-replay-v1"
+url: "https://simoneresearch.com/evidence/consumption-replay/"
