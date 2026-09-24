@@ -1,0 +1,1 @@
+This repository publishes a synthetic, manually annotated fixture for inspection and local execution. It is not the private Consumption Engine runtime or a customer corpus. Review README.md for scope and limitations.
