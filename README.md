@@ -1,5 +1,7 @@
 # ce-stranger-replay-v1
 
+[![Public fixture verification](https://github.com/thisisntjon/ce-stranger-replay-v1/actions/workflows/public-fixture.yml/badge.svg)](https://github.com/thisisntjon/ce-stranger-replay-v1/actions/workflows/public-fixture.yml)
+
 A public, synthetic replay of a bounded Consumption Engine evidence workflow.
 
 This repository contains only the fixture and the code needed to run it. It does not contain the private Consumption Engine runtime, private archives, customer material, TheLibrary, HistoryLab, workstation caches, or credentials.
