@@ -26,4 +26,9 @@ jobs:
         uses: actions/upload-artifact@v4
         with:
           name: public-fixture-receipts
-          path: .tmp/public-demo-run/{RECEIPT.json,RESULT.json,REPORT.md,ORACLE-DECISION.json}
+          path: |
+            .tmp/public-demo-run/RECEIPT.json
+            .tmp/public-demo-run/RESULT.json
+            .tmp/public-demo-run/REPORT.md
+            .tmp/public-demo-run/ORACLE-DECISION.json
+
