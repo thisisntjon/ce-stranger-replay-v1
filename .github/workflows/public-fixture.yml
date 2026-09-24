@@ -10,25 +10,32 @@ permissions:
 
 jobs:
   public-demo:
-    runs-on: ubuntu-latest
+    name: ${{ matrix.os }} / Python ${{ matrix.python }}
+    runs-on: ${{ matrix.os }}
+    strategy:
+      fail-fast: false
+      matrix:
+        os: [ubuntu-latest, windows-latest, macos-latest]
+        python: ['3.11']
     steps:
       - name: Check out fixture
         uses: actions/checkout@v4
       - name: Set up Python
         uses: actions/setup-python@v5
         with:
-          python-version: '3.11'
+          python-version: ${{ matrix.python }}
       - name: Run public fixture
-        run: python examples/public_demo/run_public_demo.py --output .tmp/public-demo-run
+        run: python examples/public_demo/run_public_demo.py --output .tmp/public-demo-${{ matrix.os }}
       - name: Verify published oracle
-        run: python examples/public_demo/verify_receipt.py .tmp/public-demo-run/RECEIPT.json --output .tmp/public-demo-run/ORACLE-DECISION.json
+        run: python examples/public_demo/verify_receipt.py .tmp/public-demo-${{ matrix.os }}/RECEIPT.json --output .tmp/public-demo-${{ matrix.os }}/ORACLE-DECISION.json
       - name: Upload receipts
+        if: always()
         uses: actions/upload-artifact@v4
         with:
-          name: public-fixture-receipts
+          name: public-fixture-receipts-${{ matrix.os }}
           path: |
-            .tmp/public-demo-run/RECEIPT.json
-            .tmp/public-demo-run/RESULT.json
-            .tmp/public-demo-run/REPORT.md
-            .tmp/public-demo-run/ORACLE-DECISION.json
-
+            .tmp/public-demo-${{ matrix.os }}/RECEIPT.json
+            .tmp/public-demo-${{ matrix.os }}/RESULT.json
+            .tmp/public-demo-${{ matrix.os }}/REPORT.md
+            .tmp/public-demo-${{ matrix.os }}/ORACLE-DECISION.json
+          if-no-files-found: error
