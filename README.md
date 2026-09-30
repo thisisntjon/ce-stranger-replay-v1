@@ -6,11 +6,18 @@ A public, synthetic replay of a bounded Consumption Engine evidence workflow.
 
 This repository contains only the fixture and the code needed to run it. It does not contain the private Consumption Engine runtime, private archives, customer material, TheLibrary, HistoryLab, workstation caches, or credentials.
 
+## Released fixture and research boundary
+
+The released fixture tag `v1.0.0-fixture` identifies commit `8374bb6ee93edef37f57f284532d9487d5fd2e2d`. [Recorded CI run 36072442061](https://github.com/thisisntjon/ce-stranger-replay-v1/actions/runs/36072442061) passed nine OS/Python jobs at that commit. This is hosted synthetic replay, not reproduction of private CE procedure studies. See the separate [research record](https://github.com/thisisntjon/consumption-demo) for dated results and limits.
+
 ## Run it
 
 Requirements: Python 3.11 or newer. No third-party packages or network access are required after cloning.
 
 ```powershell
+git clone https://github.com/thisisntjon/ce-stranger-replay-v1.git
+cd ce-stranger-replay-v1
+git checkout 8374bb6ee93edef37f57f284532d9487d5fd2e2d
 python examples/public_demo/run_public_demo.py --output .tmp/public-demo-run
 python examples/public_demo/compare_baseline.py --output .tmp/public-comparison
 ```
