@@ -9,4 +9,5 @@ authors:
 version: "1.0.0-fixture"
 date-released: 2026-09-24
 repository-code: "https://github.com/thisisntjon/ce-stranger-replay-v1"
+license: MIT
 url: "https://simoneresearch.com/evidence/consumption-replay/"
