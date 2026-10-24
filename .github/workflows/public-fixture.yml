@@ -24,9 +24,9 @@ jobs:
     timeout-minutes: 10
     steps:
       - name: Check out fixture
-        uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262 # v4
+        uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262 # v4.4.0
       - name: Set up Python
-        uses: actions/setup-python@a26af69be951a213d495a4c3e4e4022e16d87065 # v5
+        uses: actions/setup-python@a26af69be951a213d495a4c3e4e4022e16d87065 # v5.6.0
         with:
           python-version: ${{ matrix.python }}
       - name: Run public fixture
@@ -35,7 +35,7 @@ jobs:
         run: python examples/public_demo/verify_receipt.py .tmp/ci-${{ matrix.os }}-py${{ matrix.python }}/run/RECEIPT.json --output .tmp/ci-${{ matrix.os }}-py${{ matrix.python }}/run/ORACLE-DECISION.json
       - name: Upload receipts
         if: always()
-        uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02 # v4
+        uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02 # v4.6.2
         with:
           name: public-fixture-receipts-${{ matrix.os }}-py${{ matrix.python }}
           path: |
